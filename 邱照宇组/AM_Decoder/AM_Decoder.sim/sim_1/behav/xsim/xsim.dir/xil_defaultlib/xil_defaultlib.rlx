@@ -1,0 +1,17 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+D:/fpga/AM_Decoder/AM_Decoder.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sim_1/new/AM_test_tb.v,1781326810,verilog,,,,AM_test_tb,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sim_1/new/phase_creater_bd.v,1781251707,verilog,,,,phase_creater_bd,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/cordic_0/sim/cordic_0.vhd,1781268228,vhdl,,,,cordic_0,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/dds_compiler_0/sim/dds_compiler_0.vhd,1781254894,vhdl,,,,dds_compiler_0,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/fir_compiler_0/sim/fir_compiler_0.vhd,1781329111,vhdl,,,,fir_compiler_0,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_0/sim/mult_gen_0.vhd,1781267114,vhdl,,,,mult_gen_0,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_1/sim/mult_gen_1.vhd,1781268052,vhdl,,,,mult_gen_1,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/AM_decoder.v,1781272387,verilog,,D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/FIR_Sample3.25m_Stop60k,,AM_decoder,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/FIR_Sample3.25m_Stop60k,1781330496,verilog,,D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix.v,,FIR_130m_5m,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix.v,1781326610,verilog,,D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect.v,,IQ_FreMix,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect.v,1781271028,verilog,,D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/phase_creater.v,,detect_AM,,,,,,,,
+D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/phase_creater.v,1781256037,verilog,,D:/fpga/AM_Decoder/AM_Decoder.srcs/sim_1/new/AM_test_tb.v,,Phase_Creater,,,,,,,,
