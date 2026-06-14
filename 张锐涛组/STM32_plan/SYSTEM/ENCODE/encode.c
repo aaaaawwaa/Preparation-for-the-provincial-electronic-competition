@@ -1,5 +1,5 @@
 #include "encode.h"
-#include "../HARDWARE/AD9833/ad9833.h"
+#include "../../HARDWARE/ad9851.h"
 
 /* ============================================================
  * 发送端
@@ -11,7 +11,6 @@ static uint8_t g_tx_bit_idx = 0;
 static uint8_t g_tx_data[ASK_MAX_DATA_LEN + 4]; /* header + len + data + checksum */
 static uint8_t g_tx_data_len = 0;
 static uint8_t g_tx_data_pos = 0;
-static uint16_t g_tx_tick = 0;
 
 void ENCODE_Init(void)
 {
@@ -32,7 +31,6 @@ void ENCODE_SendByte(uint8_t byte)
 
     g_tx_byte = byte;
     g_tx_bit_idx = 0;
-    g_tx_tick = 0;
     g_tx_state = ASK_TX_START_BIT;
 }
 
@@ -76,7 +74,7 @@ void ENCODE_TxTicker(void)
 {
     if (g_tx_state == ASK_TX_IDLE)
     {
-        AD9833_ASK_Symbol(0);
+        AD9851_ASK_Symbol(0);
         return;
     }
 
@@ -91,7 +89,7 @@ void ENCODE_TxTicker(void)
         else
         {
             g_tx_state = ASK_TX_IDLE;
-            AD9833_ASK_Symbol(0);
+            AD9851_ASK_Symbol(0);
         }
         return;
     }
@@ -101,14 +99,14 @@ void ENCODE_TxTicker(void)
     {
         case ASK_TX_START_BIT:
             /* 发送start bit (0) -> 关闭载波 */
-            AD9833_ASK_Symbol(0);
+            AD9851_ASK_Symbol(0);
             g_tx_state = ASK_TX_DATA_BITS;
             g_tx_bit_idx = 0;
             break;
 
         case ASK_TX_DATA_BITS:
             /* 发送数据位 (LSB first) */
-            AD9833_ASK_Symbol((g_tx_byte >> g_tx_bit_idx) & 0x01);
+            AD9851_ASK_Symbol((g_tx_byte >> g_tx_bit_idx) & 0x01);
             g_tx_bit_idx++;
             if (g_tx_bit_idx >= 8)
                 g_tx_state = ASK_TX_STOP_BIT;
@@ -116,7 +114,7 @@ void ENCODE_TxTicker(void)
 
         case ASK_TX_STOP_BIT:
             /* 发送stop bit (1) -> 打开载波 */
-            AD9833_ASK_Symbol(1);
+            AD9851_ASK_Symbol(1);
             g_tx_state = ASK_TX_DONE;
             break;
 
@@ -132,9 +130,6 @@ void ENCODE_TxTicker(void)
 static ASK_RX_State g_rx_state = ASK_RX_IDLE;
 static uint8_t g_rx_byte = 0;
 static uint8_t g_rx_bit_idx = 0;
-static uint8_t g_rx_frame[ASK_MAX_DATA_LEN + 4];
-static uint8_t g_rx_frame_pos = 0;
-static uint8_t g_rx_frame_len = 0;
 static uint8_t g_rx_bit_history = 0;   /* 用于检测边沿 */
 static uint16_t g_rx_silence_cnt = 0;  /* 空闲超时 */
 
@@ -143,7 +138,6 @@ void DECODE_Init(void)
     g_rx_state = ASK_RX_IDLE;
     g_rx_byte = 0;
     g_rx_bit_idx = 0;
-    g_rx_frame_pos = 0;
     g_rx_silence_cnt = 0;
 }
 
@@ -165,7 +159,6 @@ void DECODE_FeedBit(uint8_t bit)
                 if (g_rx_silence_cnt > 30) /* 300ms无信号 */
                 {
                     g_rx_silence_cnt = 0;
-                    g_rx_frame_pos = 0;
                 }
             }
             else
@@ -173,7 +166,7 @@ void DECODE_FeedBit(uint8_t bit)
                 /* 检测到低电平 -> start bit? */
                 if ((g_rx_bit_history & 0x03) == 0x02) /* 下降沿 */
                 {
-                    g_rx_state = ASK_RX_START_BIT;
+                    g_rx_state = ASK_RX_WAIT_START;
                     g_rx_bit_idx = 0;
                     g_rx_byte = 0;
                     g_rx_silence_cnt = 0;
@@ -181,7 +174,7 @@ void DECODE_FeedBit(uint8_t bit)
             }
             break;
 
-        case ASK_RX_START_BIT:
+        case ASK_RX_WAIT_START:
             /* 确认start bit仍然为0 */
             if (bit == 0)
             {

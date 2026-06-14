@@ -75,7 +75,7 @@ uint32_t ad9851_phase_trun(double phase,uint8_t control)//单位Hz,范围0-360,�
     
     for(uint8_t i=0;i<32;i++)
     {
-        if(i*11.25<=phase<i*11.25)
+        if(phase >= (double)i * 11.25 && phase < (double)(i + 1U) * 11.25)
         {
             phase_reg=i;
             break;
@@ -111,4 +111,17 @@ void ad9851_write(double fre,double phase,uint8_t control)
 	}
 	fq_ad9851(1);
     fq_ad9851(0);
+}
+
+/*
+ * 2ASK符号调制 (用于替代AD9833)
+ * bit=1: 输出11.5kHz载波
+ * bit=0: 关闭DAC输出
+ */
+void AD9851_ASK_Symbol(uint8_t bit)
+{
+    if (bit)
+        ad9851_write(AD9851_ASK_CARRIER_HZ, 0.0, ad9851_fd | ad9851_on);
+    else
+        ad9851_write(AD9851_ASK_CARRIER_HZ, 0.0, ad9851_fd | ad9851_off);
 }

@@ -4,24 +4,23 @@
 #include "stm32f10x.h"
 
 /*
- * 4x4 矩阵键盘模块
- * 注意: 与FPGA数据总线分时复用(TX模式使用键盘, RX模式使用FPGA)
+ * 4x4 矩阵键盘模块 (STM32F103C8T6)
  *
  * 引脚映射:
- *   行 (输出): PB8(ROW0), PB9(ROW1), PB1(ROW2), PC11(ROW3)
- *   列 (输入): PC0(COL0), PC1(COL1), PC2(COL2), PC3(COL3)
+ *   行 (输出): PB10(ROW0), PB9(ROW1), PB1(ROW2), PB11(ROW3)
+ *   列 (输入): PA0(COL0), PA1(COL1), PA2(COL2), PA3(COL3)
  */
 
 /* 行引脚 (输出) */
 #define KEYB_ROW_PORT_H     GPIOB
-#define KEYB_ROW0           GPIO_Pin_8
+#define KEYB_ROW0           GPIO_Pin_10
 #define KEYB_ROW1           GPIO_Pin_9
 #define KEYB_ROW2           GPIO_Pin_1
-#define KEYB_ROW_PORT_L     GPIOC
+#define KEYB_ROW_PORT_L     GPIOB
 #define KEYB_ROW3           GPIO_Pin_11
 
 /* 列引脚 (输入, 上拉) */
-#define KEYB_COL_PORT       GPIOC
+#define KEYB_COL_PORT       GPIOA
 #define KEYB_COL0           GPIO_Pin_0
 #define KEYB_COL1           GPIO_Pin_1
 #define KEYB_COL2           GPIO_Pin_2

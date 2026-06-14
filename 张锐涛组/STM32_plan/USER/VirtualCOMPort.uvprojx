@@ -538,14 +538,14 @@
               <FilePath>..\SYSTEM\usart\usart.c</FilePath>
             </File>
             <File>
-              <FileName>DC_bias.c</FileName>
+              <FileName>keyboard.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\SYSTEM\DC_bias\DC_bias.c</FilePath>
+              <FilePath>..\SYSTEM\KEYBOARD\keyboard.c</FilePath>
             </File>
             <File>
-              <FileName>recognize.c</FileName>
+              <FileName>encode.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\SYSTEM\Recognize\recognize.c</FilePath>
+              <FilePath>..\SYSTEM\ENCODE\encode.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -563,21 +563,6 @@
           <GroupName>HARDWARE</GroupName>
           <Files>
             <File>
-              <FileName>STM32_config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\HARDWARE\STM32_config.h</FilePath>
-            </File>
-            <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\HARDWARE\timer.h</FilePath>
-            </File>
-            <File>
               <FileName>OLED.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\OLED.c</FilePath>
@@ -593,52 +578,18 @@
               <FilePath>..\HARDWARE\OLED_Font.h</FilePath>
             </File>
             <File>
-              <FileName>74HC595.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\74HC595.c</FilePath>
-            </File>
-            <File>
               <FileName>ad9851.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\ad9851.c</FilePath>
             </File>
             <File>
-              <FileName>adf4002.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\adf4002.c</FilePath>
-            </File>
-            <File>
-              <FileName>RDA5820.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\RDA5820.c</FilePath>
+              <FileName>ad9851.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\HARDWARE\ad9851.h</FilePath>
             </File>
           </Files>
         </Group>
-        <Group>
-          <GroupName>DSP</GroupName>
-          <Files>
-            <File>
-              <FileName>cr4_fft_256_stm32.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\DSP\cr4_fft_256_stm32.s</FilePath>
-            </File>
-            <File>
-              <FileName>cr4_fft_1024_stm32.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\DSP\cr4_fft_1024_stm32.s</FilePath>
-            </File>
-            <File>
-              <FileName>stm32_dsp.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\DSP\stm32_dsp.h</FilePath>
-            </File>
-            <File>
-              <FileName>table_fft.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\DSP\table_fft.h</FilePath>
-            </File>
-          </Files>
-        </Group>
+        <!-- DSP group removed: not needed for keyboard test -->
       </Groups>
     </Target>
   </Targets>

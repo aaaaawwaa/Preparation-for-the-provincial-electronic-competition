@@ -37,6 +37,9 @@
 #define ad9851_off 		(0x01<<2)//板子使能下电
 
 
+//2ASK载波频率 (Hz)
+#define AD9851_ASK_CARRIER_HZ  11500.0
+
 //函数
 void ad9851_GPIOInit(void);	//管脚初�?�化
 
@@ -46,5 +49,8 @@ void ad9851_reset_serial(void);	//ad9851复位（回归串口模式）
 
 void ad9851_write(double fre,double phase,uint8_t control);
 //写入频率，相位及控制�??
+
+void AD9851_ASK_Symbol(uint8_t bit);
+//2ASK symbol: bit=1 output carrier, bit=0 output off
 
 #endif

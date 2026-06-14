@@ -2,7 +2,11 @@
 #include "delay.h"
 
 /*
- * 4x4 矩阵键盘扫描
+ * 4x4 矩阵键盘扫描 (STM32F103C8T6)
+ *
+ * 引脚映射:
+ *   行: PB10(ROW0), PB9(ROW1), PB1(ROW2), PB11(ROW3)
+ *   列: PA0(COL0), PA1(COL1), PA2(COL2), PA3(COL3)
  *
  * 按键映射:
  *   +----+----+----+----+
@@ -22,10 +26,10 @@
 
 /* 键值表 (行x列) */
 static const uint8_t key_map[4][4] = {
-    {KEY_1, KEY_2, KEY_3, KEY_A},
-    {KEY_4, KEY_5, KEY_6, KEY_B},
-    {KEY_7, KEY_8, KEY_9, KEY_C},
-    {KEY_E, KEY_0, KEY_F, KEY_D},   /* D=E(0xE0), 0=0, #=F */
+    {KEY_D, KEY_F, KEY_0, KEY_E},
+    {KEY_C, KEY_9, KEY_8, KEY_7},
+    {KEY_B, KEY_6, KEY_5, KEY_4},
+    {KEY_A, KEY_3, KEY_2, KEY_1},
 };
 
 void KEYBOARD_Init(void)
@@ -33,19 +37,15 @@ void KEYBOARD_Init(void)
     GPIO_InitTypeDef GPIO_InitStructure;
 
     /* 时钟使能 */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB, ENABLE);
 
     /* 行: 推挽输出, 初始高电平 */
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 
-    /* PB8, PB9, PB1 */
-    GPIO_InitStructure.GPIO_Pin = KEYB_ROW0 | KEYB_ROW1 | KEYB_ROW2;
+    /* PB8, PB9, PB1, PB0 (全部在 GPIOB) */
+    GPIO_InitStructure.GPIO_Pin = KEYB_ROW0 | KEYB_ROW1 | KEYB_ROW2 | KEYB_ROW3;
     GPIO_Init(KEYB_ROW_PORT_H, &GPIO_InitStructure);
-
-    /* PC11 */
-    GPIO_InitStructure.GPIO_Pin = KEYB_ROW3;
-    GPIO_Init(KEYB_ROW_PORT_L, &GPIO_InitStructure);
 
     /* 列: 上拉输入 */
     GPIO_InitStructure.GPIO_Pin = KEYB_COL0 | KEYB_COL1 | KEYB_COL2 | KEYB_COL3;
