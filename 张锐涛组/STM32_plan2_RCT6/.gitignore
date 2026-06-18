@@ -1,0 +1,7 @@
+# Build outputs
+Project/Objects/
+Project/Listings/
+*.uvguix.*
+
+# IDE
+*.uvguix.*
