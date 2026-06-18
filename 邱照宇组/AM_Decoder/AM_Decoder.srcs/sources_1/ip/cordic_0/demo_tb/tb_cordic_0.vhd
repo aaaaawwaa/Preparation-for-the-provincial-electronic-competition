@@ -94,6 +94,7 @@ architecture tb of tb_cordic_0 is
 
   -- Slave channel CARTESIAN inputs
   signal s_axis_cartesian_tvalid    : std_logic := '0';  -- TVALID for channel S_AXIS_CARTESIAN
+  signal s_axis_cartesian_tuser     : std_logic_vector(12 downto 0) := (others => 'X');  -- TUSER for channel S_AXIS_CARTESIAN
   signal s_axis_cartesian_tdata     : std_logic_vector(39 downto 0) := (others => 'X');  -- TDATA for channel S_AXIS_CARTESIAN
 
   -- Slave channel PHASE inputs
@@ -106,6 +107,7 @@ architecture tb of tb_cordic_0 is
 
   -- Master channel DOUT outputs
   signal m_axis_dout_tvalid : std_logic := '0';  -- TVALID for channel M_AXIS_DOUT
+  signal m_axis_dout_tuser  : std_logic_vector(12 downto 0) := (others => '0');  -- TUSER for channel M_AXIS_DOUT
   signal m_axis_dout_tdata  : std_logic_vector(23 downto 0) := (others => '0');  -- TDATA for channel M_AXIS_DOUT
 
   -----------------------------------------------------------------------
@@ -208,8 +210,10 @@ begin
     port map (
       aclk                => aclk,
       s_axis_cartesian_tvalid     => s_axis_cartesian_tvalid,
+      s_axis_cartesian_tuser      => s_axis_cartesian_tuser,
       s_axis_cartesian_tdata      => s_axis_cartesian_tdata,
       m_axis_dout_tvalid  => m_axis_dout_tvalid,
+      m_axis_dout_tuser   => m_axis_dout_tuser,
       m_axis_dout_tdata   => m_axis_dout_tdata
       );
 
@@ -299,11 +303,14 @@ begin
       -- Drive 'X's on payload signals when not valid
       if cartesian_tvalid_nxt /= '1' then
         s_axis_cartesian_tdata <= (others => 'X');
+        s_axis_cartesian_tuser <= (others => 'X');
       else
         -- TDATA: Real and imaginary components are each 34 bits wide and byte-aligned at their LSBs
         s_axis_cartesian_tdata(33 downto 0) <= IP_CARTESIAN_DATA(ip_cartesian_index).re;
         s_axis_cartesian_tdata(19 downto 34) <= (others => IP_CARTESIAN_DATA(ip_cartesian_index).re(33));  -- sign-extend;
 
+        -- TUSER: Drive the data index value
+        s_axis_cartesian_tuser <= std_logic_vector(to_unsigned(ip_cartesian_index, 13));
       end if;
 
       -- Drive AXI slave channel PHASE payload
@@ -354,6 +361,10 @@ begin
     if m_axis_dout_tvalid = '1' then
       if is_x(m_axis_dout_tdata) then
         report "ERROR: m_axis_dout_tdata is invalid when m_axis_dout_tvalid is high" severity error;
+        check_ok := false;
+      end if;
+      if is_x(m_axis_dout_tuser) then
+        report "ERROR: m_axis_dout_tuser is invalid when m_axis_dout_tvalid is high" severity error;
         check_ok := false;
       end if;
 

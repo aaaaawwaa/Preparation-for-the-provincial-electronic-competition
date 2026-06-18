@@ -1,6 +1,9 @@
 vlib work
 vlib activehdl
 
+vlib activehdl/xilinx_vip
+vlib activehdl/xil_defaultlib
+vlib activehdl/xpm
 vlib activehdl/xbip_utils_v3_0_9
 vlib activehdl/c_reg_fd_v12_0_5
 vlib activehdl/xbip_dsp48_wrapper_v3_0_4
@@ -12,8 +15,10 @@ vlib activehdl/xbip_bram18k_v3_0_5
 vlib activehdl/mult_gen_v12_0_14
 vlib activehdl/axi_utils_v2_0_5
 vlib activehdl/cordic_v6_0_14
-vlib activehdl/xil_defaultlib
 
+vmap xilinx_vip activehdl/xilinx_vip
+vmap xil_defaultlib activehdl/xil_defaultlib
+vmap xpm activehdl/xpm
 vmap xbip_utils_v3_0_9 activehdl/xbip_utils_v3_0_9
 vmap c_reg_fd_v12_0_5 activehdl/c_reg_fd_v12_0_5
 vmap xbip_dsp48_wrapper_v3_0_4 activehdl/xbip_dsp48_wrapper_v3_0_4
@@ -25,7 +30,23 @@ vmap xbip_bram18k_v3_0_5 activehdl/xbip_bram18k_v3_0_5
 vmap mult_gen_v12_0_14 activehdl/mult_gen_v12_0_14
 vmap axi_utils_v2_0_5 activehdl/axi_utils_v2_0_5
 vmap cordic_v6_0_14 activehdl/cordic_v6_0_14
-vmap xil_defaultlib activehdl/xil_defaultlib
+
+vlog -work xilinx_vip  -sv2k12 "+incdir+D:/xlinx/Vivado/2018.3/data/xilinx_vip/include" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/axi_vip_if.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/clk_vip_if.sv" \
+"D:/xlinx/Vivado/2018.3/data/xilinx_vip/hdl/rst_vip_if.sv" \
+
+vlog -work xil_defaultlib  -sv2k12 "+incdir+D:/xlinx/Vivado/2018.3/data/xilinx_vip/include" \
+"D:/xlinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+
+vcom -work xpm -93 \
+"D:/xlinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vcom -work xbip_utils_v3_0_9 -93 \
 "../../../ipstatic/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
@@ -63,4 +84,6 @@ vcom -work cordic_v6_0_14 -93 \
 vcom -work xil_defaultlib -93 \
 "../../../../AM_Decoder.srcs/sources_1/ip/cordic_0/sim/cordic_0.vhd" \
 
+vlog -work xil_defaultlib \
+"glbl.v"
 

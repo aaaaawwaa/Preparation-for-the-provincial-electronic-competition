@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Tue Jun 16 22:05:32 2026
+# Process ID: 3204
+# Current directory: D:/fpga/AM_Decoder/AM_Decoder.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: D:/fpga/AM_Decoder/AM_Decoder.sdk/webtalk/webtalk.log
+# Journal file: D:/fpga/AM_Decoder/AM_Decoder.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

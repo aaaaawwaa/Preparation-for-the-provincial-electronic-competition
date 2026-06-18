@@ -1,10 +1,11 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  \
-"../../../../AM_Decoder.srcs/sources_1/new/AM_decoder.v" \
-"../../../../AM_Decoder.srcs/sources_1/new/FIR_Sample3.25m_Stop60k" \
-"../../../../AM_Decoder.srcs/sources_1/new/IQ_FreMix.v" \
-"../../../../AM_Decoder.srcs/sources_1/new/detect.v" \
+verilog xil_defaultlib  --include "../../../../AM_Decoder.srcs/sources_1/bd/system/ipshared/ec67/hdl" --include "../../../../AM_Decoder.srcs/sources_1/bd/system/ipshared/70cf/hdl" --include "../../../../AM_Decoder.srcs/sources_1/ip/clk_wiz_0_1" --include "D:/xlinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../AM_Decoder.ip_user_files/bd/system/ip/system_processing_system7_0_0/sim/system_processing_system7_0_0.v" \
+"../../../../AM_Decoder.ip_user_files/bd/system/sim/system.v" \
+"../../../../AM_Decoder.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_clk_wiz.v" \
+"../../../../AM_Decoder.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.v" \
 "../../../../AM_Decoder.srcs/sources_1/new/phase_creater.v" \
+"../../../../AM_Decoder.srcs/sources_1/bd/system/hdl/system_wrapper.v" \
 "../../../../AM_Decoder.srcs/sim_1/new/AM_test_tb.v" \
 
 # compile glbl module

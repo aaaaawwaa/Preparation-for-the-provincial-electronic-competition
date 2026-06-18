@@ -27,10 +27,20 @@ module AM_test_tb(
 parameter A_degree=16'd512;
 
 
-reg CLK_H;
+wire CLK_H;
 reg [31:0]tdata_b;
 reg Reset;
 wire signed [15:0]phase_b;
+reg CLK;
+wire CLK_S;
+
+clk_wiz_0 Ps_clock(
+    .clk_in1(CLK),
+    .clk_out1(CLK_H),
+    .clk_out2(CLK_S)
+);
+
+
 
 Phase_Creater u_Phase_Creater_b(
     .CLK_H(CLK_H),
@@ -70,12 +80,31 @@ assign wave_send=mult_out[27:16];
 
 wire [15:0]out;
 
-AM_decoder t1(
-    .AM_wave(wave_send),
-    .CLK_H(CLK_H),
-    .Reset(Reset),
-    .decode(out)
+//AM_decoder t1(
+//    .AM_wave(wave_send),
+//    .CLK_H(CLK_H),
+//    .Reset(Reset),
+//    .decode(out)
+//);
+
+system_wrapper t3(
+    .Meg_input(wave_send),
+    .reset_rtl_0(Reset),
+    .Analog_meg(out)
+//    .CLK_50M(CLK)
 );
+
+wire [16:0]range;
+wire [12:0]sample;
+
+//fre_detect t5(
+//    .wave(phase_b[15:4]),
+//    .CLK_H(CLK_H),
+//    .Reset(Reset),
+//    .range(range),
+//    .sample(sample),
+//    .CLK(CLK_S)
+//    );
 
 wire [15:0]I;
 wire [15:0]Q;
@@ -97,7 +126,7 @@ wire [15:0]test2;
 
 
 initial begin
-    CLK_H=0;
+    CLK=0;
     Reset=0;
     #100;
     Reset=1;
@@ -105,7 +134,7 @@ initial begin
 
 end
 
-always #2.5 CLK_H=~CLK_H;
+always #10 CLK=~CLK;
 
 
 initial tdata_b=32'b0000_0000_0000_0000_0000_0000_0000_1000;

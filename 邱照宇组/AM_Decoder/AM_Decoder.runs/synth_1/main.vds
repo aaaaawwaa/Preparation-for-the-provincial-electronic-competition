@@ -1,0 +1,667 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jun 18 17:16:44 2026
+# Process ID: 17476
+# Current directory: D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1
+# Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/main.vds
+# Journal file: D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source main.tcl -notrace
+Command: synth_design -top main -part xc7z020clg484-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 11856 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 427.980 ; gain = 106.340
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'main' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:23]
+INFO: [Synth 8-6157] synthesizing module 'system_wrapper' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/bd/system/synth/system.v:13]
+INFO: [Synth 8-6157] synthesizing module 'system_processing_system7_0_0' [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/system_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_processing_system7_0_0' (1#1) [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/system_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'processing_system7_0' of module 'system_processing_system7_0_0' requires 62 connections, but only 34 given [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/bd/system/synth/system.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'system' (2#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/bd/system/synth/system.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'system_wrapper' (3#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/bd/system/hdl/system_wrapper.v:12]
+WARNING: [Synth 8-350] instance 'system' of module 'system_wrapper' requires 22 connections, but only 1 given [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:35]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (4#1) [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'AD9226' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/AD9226.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'AD9226' (5#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/AD9226.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ASK_decode' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/ASK_decode.v:23]
+INFO: [Synth 8-6157] synthesizing module 'IQ_FreMix_Low' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DDS_LOW' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/DDS_2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dds_compiler_1' [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/dds_compiler_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dds_compiler_1' (6#1) [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/dds_compiler_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'DDS_LOW' (7#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/DDS_2.v:23]
+WARNING: [Synth 8-350] instance 'cos_gen_1' of module 'DDS_LOW' requires 5 connections, but only 4 given [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:54]
+WARNING: [Synth 8-350] instance 'sin_gen_1' of module 'DDS_LOW' requires 5 connections, but only 4 given [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:62]
+INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:68]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:71]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 5 - type: integer 
+	Parameter C_A_WIDTH bound to: 12 - type: integer 
+	Parameter C_A_TYPE bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 16 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_OUT_HIGH bound to: 27 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 0 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_14' declared at 'd:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/cordic_0/hdl/mult_gen_v12_0_vh_rfs.vhd:21013' bound to instance 'U0' of component 'mult_gen_v12_0_14' [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:120]
+INFO: [Synth 8-256] done synthesizing module 'mult_gen_0' (13#1) [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:68]
+INFO: [Synth 8-6157] synthesizing module 'FIR_ASK' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/FIR_ASK.v:23]
+INFO: [Synth 8-6157] synthesizing module 'fir_compiler_2' [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/fir_compiler_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fir_compiler_2' (14#1) [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/fir_compiler_2_stub.v:6]
+WARNING: [Synth 8-689] width (14) of port connection 'm_axis_data_tdata' does not match port width (40) of module 'fir_compiler_2' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/FIR_ASK.v:56]
+WARNING: [Synth 8-5788] Register phase_output_saver_reg in module FIR_ASK is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/FIR_ASK.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'FIR_ASK' (15#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/FIR_ASK.v:23]
+WARNING: [Synth 8-689] width (28) of port connection 'phase_input' does not match port width (16) of module 'FIR_ASK' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:93]
+WARNING: [Synth 8-689] width (16) of port connection 'phase_output' does not match port width (14) of module 'FIR_ASK' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:94]
+WARNING: [Synth 8-689] width (28) of port connection 'phase_input' does not match port width (16) of module 'FIR_ASK' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:100]
+WARNING: [Synth 8-689] width (16) of port connection 'phase_output' does not match port width (14) of module 'FIR_ASK' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:101]
+INFO: [Synth 8-6155] done synthesizing module 'IQ_FreMix_Low' (16#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/IQ_FreMix_Low.v:23]
+WARNING: [Synth 8-350] instance 'task_1' of module 'IQ_FreMix_Low' requires 9 connections, but only 6 given [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/ASK_decode.v:45]
+INFO: [Synth 8-6157] synthesizing module 'detect_ASK' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:23]
+INFO: [Synth 8-638] synthesizing module 'mult_gen_1' [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_1/synth/mult_gen_1.vhd:68]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_1/synth/mult_gen_1.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_1/synth/mult_gen_1.vhd:71]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 5 - type: integer 
+	Parameter C_A_WIDTH bound to: 16 - type: integer 
+	Parameter C_A_TYPE bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 16 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_OUT_HIGH bound to: 31 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 1 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_14' declared at 'd:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/cordic_0/hdl/mult_gen_v12_0_vh_rfs.vhd:21013' bound to instance 'U0' of component 'mult_gen_v12_0_14' [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_1/synth/mult_gen_1.vhd:120]
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-256] done synthesizing module 'mult_gen_1' (18#1) [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/mult_gen_1/synth/mult_gen_1.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'cordic_0' [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/cordic_0/synth/cordic_0.vhd:71]
+	Parameter C_ARCHITECTURE bound to: 2 - type: integer 
+	Parameter C_CORDIC_FUNCTION bound to: 6 - type: integer 
+	Parameter C_COARSE_ROTATE bound to: 0 - type: integer 
+	Parameter C_DATA_FORMAT bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_HAS_ACLK bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_CARTESIAN bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_PHASE bound to: 0 - type: integer 
+	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
+	Parameter C_INPUT_WIDTH bound to: 34 - type: integer 
+	Parameter C_ITERATIONS bound to: 0 - type: integer 
+	Parameter C_OUTPUT_WIDTH bound to: 17 - type: integer 
+	Parameter C_PHASE_FORMAT bound to: 0 - type: integer 
+	Parameter C_PIPELINE_MODE bound to: -2 - type: integer 
+	Parameter C_PRECISION bound to: 0 - type: integer 
+	Parameter C_ROUND_MODE bound to: 0 - type: integer 
+	Parameter C_SCALE_COMP bound to: 0 - type: integer 
+	Parameter C_THROTTLE_SCHEME bound to: 3 - type: integer 
+	Parameter C_TLAST_RESOLUTION bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_PHASE_TUSER bound to: 0 - type: integer 
+	Parameter C_HAS_S_AXIS_PHASE_TLAST bound to: 0 - type: integer 
+	Parameter C_S_AXIS_PHASE_TDATA_WIDTH bound to: 40 - type: integer 
+	Parameter C_S_AXIS_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_CARTESIAN_TUSER bound to: 1 - type: integer 
+	Parameter C_HAS_S_AXIS_CARTESIAN_TLAST bound to: 0 - type: integer 
+	Parameter C_S_AXIS_CARTESIAN_TDATA_WIDTH bound to: 40 - type: integer 
+	Parameter C_S_AXIS_CARTESIAN_TUSER_WIDTH bound to: 13 - type: integer 
+	Parameter C_M_AXIS_DOUT_TDATA_WIDTH bound to: 24 - type: integer 
+	Parameter C_M_AXIS_DOUT_TUSER_WIDTH bound to: 13 - type: integer 
+INFO: [Synth 8-3491] module 'cordic_v6_0_14' declared at 'd:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/cordic_0/hdl/cordic_v6_0_vh_rfs.vhd:10135' bound to instance 'U0' of component 'cordic_v6_0_14' [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/cordic_0/synth/cordic_0.vhd:148]
+INFO: [Synth 8-256] done synthesizing module 'cordic_0' (32#1) [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/cordic_0/synth/cordic_0.vhd:71]
+WARNING: [Synth 8-689] width (17) of port connection 'm_axis_dout_tdata' does not match port width (24) of module 'cordic_0' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:68]
+WARNING: [Synth 8-350] instance 'sqrt' of module 'cordic_0' requires 7 connections, but only 5 given [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'detect_ASK' (33#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:23]
+WARNING: [Synth 8-689] width (14) of port connection 'decode_meg' does not match port width (16) of module 'detect_ASK' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/ASK_decode.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'ASK_decode' (34#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/ASK_decode.v:23]
+WARNING: [Synth 8-689] width (16) of port connection 'decode_out' does not match port width (14) of module 'ASK_decode' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:75]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:89]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (35#1) [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/.Xil/Vivado-17476-LAPTOP-JO00M47A/realtime/ila_0_stub.v:6]
+WARNING: [Synth 8-689] width (16) of port connection 'probe1' does not match port width (14) of module 'ila_0' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:92]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ADC'. This will prevent further optimization [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:55]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila'. This will prevent further optimization [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:89]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'decode_ASK'. This will prevent further optimization [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:71]
+WARNING: [Synth 8-3848] Net DAC_meg in module/entity main does not have driver. [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:28]
+WARNING: [Synth 8-3848] Net DAC_CLK in module/entity main does not have driver. [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'main' (36#1) [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/main.v:23]
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SINIT
+WARNING: [Synth 8-3331] design delay__parameterized59 has unconnected port SCLR
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized27 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized27 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized27 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized27 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized27 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized27 has unconnected port C_IN
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[17]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[16]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[15]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[14]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[13]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[12]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[11]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[10]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[9]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[8]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[7]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[6]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[5]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[4]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[3]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[2]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[1]
+WARNING: [Synth 8-3331] design cordic_sqrt_mod__parameterized27 has unconnected port rem_out[0]
+WARNING: [Synth 8-3331] design delay__parameterized57 has unconnected port SCLR
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized25 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized25 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized25 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized25 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized25 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized25 has unconnected port C_IN
+WARNING: [Synth 8-3331] design delay__parameterized53 has unconnected port WE
+WARNING: [Synth 8-3331] design delay__parameterized53 has unconnected port CE
+WARNING: [Synth 8-3331] design delay__parameterized53 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay__parameterized53 has unconnected port CLK
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized23 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized23 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized23 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized23 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized23 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized23 has unconnected port C_IN
+WARNING: [Synth 8-3331] design delay__parameterized49 has unconnected port SCLR
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port ainit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port sclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port sset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized21 has unconnected port sinit
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized21 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized21 has unconnected port b_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized21 has unconnected port a_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_legacy__parameterized21 has unconnected port b_signed
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_viv__parameterized21 has unconnected port C_IN
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port clk
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port add
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port c_in
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port ce
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port bypass
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port aclr
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port aset
+WARNING: [Synth 8-3331] design c_addsub_v12_0_12_lut6_legacy__parameterized19 has unconnected port ainit
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 691.094 ; gain = 369.453
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[12] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[11] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[10] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[9] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[8] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[7] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[6] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[5] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[4] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[3] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[2] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[1] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+WARNING: [Synth 8-3295] tying undriven pin sqrt:s_axis_cartesian_tuser[0] to constant 0 [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:60]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 691.094 ; gain = 369.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 691.094 ; gain = 369.453
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 1029 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7z020clg484-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila'
+Finished Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'ila'
+Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0/system_processing_system7_0_0_in_context.xdc] for cell 'system/system_i/processing_system7_0'
+Finished Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0/system_processing_system7_0_0_in_context.xdc] for cell 'system/system_i/processing_system7_0'
+Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'global_clock'
+Finished Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'global_clock'
+Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/dds_compiler_1/dds_compiler_1/dds_compiler_1_in_context.xdc] for cell 'decode_ASK/task_1/cos_gen_1/dds1'
+Finished Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/dds_compiler_1/dds_compiler_1/dds_compiler_1_in_context.xdc] for cell 'decode_ASK/task_1/cos_gen_1/dds1'
+Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/dds_compiler_1/dds_compiler_1/dds_compiler_1_in_context.xdc] for cell 'decode_ASK/task_1/sin_gen_1/dds1'
+Finished Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/dds_compiler_1/dds_compiler_1/dds_compiler_1_in_context.xdc] for cell 'decode_ASK/task_1/sin_gen_1/dds1'
+Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'decode_ASK/task_1/fir_I/fir_1'
+Finished Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'decode_ASK/task_1/fir_I/fir_1'
+Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'decode_ASK/task_1/fir_Q/fir_1'
+Finished Parsing XDC File [d:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/ip/fir_compiler_2/fir_compiler_2/fir_compiler_2_in_context.xdc] for cell 'decode_ASK/task_1/fir_Q/fir_1'
+Parsing XDC File [D:/fpga/AM_Decoder/AM_Decoder.srcs/constrs_1/new/Version1.xdc]
+Finished Parsing XDC File [D:/fpga/AM_Decoder/AM_Decoder.srcs/constrs_1/new/Version1.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/fpga/AM_Decoder/AM_Decoder.srcs/constrs_1/new/Version1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/dont_touch.xdc]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 876.773 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 876.773 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 204 instances were transformed.
+  MULT_AND => LUT2: 204 instances
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 876.773 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 876.773 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 876.773 ; gain = 555.133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 876.773 ; gain = 555.133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for ila. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_2/sqrt. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_2/mult_I. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_2/mult_Q. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_1/mult_I. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_1/mult_Q. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system/system_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system/system_i/processing_system7_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for global_clock. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_1/cos_gen_1/dds1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_1/sin_gen_1/dds1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_1/fir_I/fir_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for decode_ASK/task_1/fir_Q/fir_1. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 876.773 ; gain = 555.133
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 876.773 ; gain = 555.133
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'task_1/sin_gen_1/s_tdata_flag_reg' into 'task_1/cos_gen_1/s_tdata_flag_reg' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/DDS_2.v:50]
+INFO: [Synth 8-4471] merging register 'task_2/sqrt_in_valid_reg' into 'task_1/cos_gen_1/s_tdata_flag_reg' [D:/fpga/AM_Decoder/AM_Decoder.srcs/sources_1/new/detect_ASK.v:65]
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[0]' (FDC) to 'decode_ASK/task_1/cos_data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[1]' (FDC) to 'decode_ASK/task_1/cos_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[2]' (FDC) to 'decode_ASK/task_1/cos_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[3]' (FDC) to 'decode_ASK/task_1/cos_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[4]' (FDC) to 'decode_ASK/task_1/cos_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[5]' (FDC) to 'decode_ASK/task_1/cos_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[6]' (FDC) to 'decode_ASK/task_1/cos_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[7]' (FDC) to 'decode_ASK/task_1/cos_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[8]' (FDC) to 'decode_ASK/task_1/cos_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[9]' (FDC) to 'decode_ASK/task_1/cos_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[10]' (FDC) to 'decode_ASK/task_1/cos_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[11]' (FDC) to 'decode_ASK/task_1/cos_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[12]' (FDC) to 'decode_ASK/task_1/cos_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[13]' (FDC) to 'decode_ASK/task_1/cos_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[14]' (FDC) to 'decode_ASK/task_1/cos_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[15]' (FDC) to 'decode_ASK/task_1/cos_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[16]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[17]' (FDC) to 'decode_ASK/task_1/sin_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[18]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[19]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[20]' (FDC) to 'decode_ASK/task_1/sin_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[21]' (FDC) to 'decode_ASK/task_1/sin_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[22]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[23]' (FDC) to 'decode_ASK/task_1/sin_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[24]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[25]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[26]' (FDC) to 'decode_ASK/task_1/sin_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[27]' (FDC) to 'decode_ASK/task_1/cos_gen_1/s_tdata_flag_reg'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[28]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[29]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[30]' (FDC) to 'decode_ASK/task_1/sin_data_reg[31]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/sin_data_reg[31]' (FDC) to 'decode_ASK/task_1/cos_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[16]' (FDC) to 'decode_ASK/task_1/cos_data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[17]' (FDC) to 'decode_ASK/task_1/cos_data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[18]' (FDC) to 'decode_ASK/task_1/cos_data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[19]' (FDC) to 'decode_ASK/task_1/cos_data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[20]' (FDC) to 'decode_ASK/task_1/cos_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[21]' (FDC) to 'decode_ASK/task_1/cos_data_reg[22]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[22]' (FDC) to 'decode_ASK/task_1/cos_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[23]' (FDC) to 'decode_ASK/task_1/cos_data_reg[24]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[24]' (FDC) to 'decode_ASK/task_1/cos_data_reg[25]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[25]' (FDC) to 'decode_ASK/task_1/cos_data_reg[26]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[26]' (FDC) to 'decode_ASK/task_1/cos_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[27]' (FDC) to 'decode_ASK/task_1/cos_data_reg[28]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[28]' (FDC) to 'decode_ASK/task_1/cos_data_reg[29]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[29]' (FDC) to 'decode_ASK/task_1/cos_data_reg[30]'
+INFO: [Synth 8-3886] merging instance 'decode_ASK/task_1/cos_data_reg[30]' (FDC) to 'decode_ASK/task_1/cos_data_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (decode_ASK/\task_1/cos_data_reg[31] )
+INFO: [Synth 8-3886] merging instance 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_1_add.stage_1_pipeline.s1_add_out_reg[0][19]' (FDR) to 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_1_add.stage_1_pipeline.s1_add_out_reg[0][20]'
+INFO: [Synth 8-3886] merging instance 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_1_add.stage_1_pipeline.s1_add_out_reg[1][19]' (FDR) to 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_1_add.stage_1_pipeline.s1_add_out_reg[1][20]'
+INFO: [Synth 8-3886] merging instance 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_1_add.stage_1_pipeline.s1_add_out_reg[2][20]' (FDR) to 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_1_add.stage_1_pipeline.s1_add_out_reg[2][19]'
+INFO: [Synth 8-3886] merging instance 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_2_add.stage_2_pipeline.s2_add_out_reg[0][24]' (FDR) to 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_2_add.stage_2_pipeline.s2_add_out_reg[0][25]'
+INFO: [Synth 8-3886] merging instance 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_2_add.stage_2_pipeline.s2_add_out_reg[1][20]' (FDR) to 'mult_gen_0:/U0/i_mult/gLUT.gLUT_speed.iLUT/NxM_mult.stage_2_add.stage_2_pipeline.s2_add_out_reg[1][19]'
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[16].i_fdre0) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[16].i_fdre1) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[17].i_fdre0) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[17].i_fdre1) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[18].i_fdre0) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[18].i_fdre1) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[19].i_fdre0) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[19].i_fdre1) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[20].i_fdre0) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.srl_loop[20].i_fdre1) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+INFO: [Synth 8-3332] Sequential element (gDSP.gDSP_only.iDSP/inferred_dsp.Pdelay/dN_hlutnm.runt_srl_loop.i_fdre) is unused and will be removed from module mult_gen_v12_0_14_viv__parameterized1.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 876.773 ; gain = 555.133
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'system/system_i/processing_system7_0/FCLK_CLK0' to pin 'system/system_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'global_clock/clk_in1' to pin 'system/system_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'global_clock/clk_out1' to pin 'global_clock/bbstub_clk_out1/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'global_clock/clk_in1' to 'system/system_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'global_clock/clk_out2' to pin 'global_clock/bbstub_clk_out2/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'global_clock/clk_in1' to 'system/system_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'global_clock/clk_out3' to pin 'global_clock/bbstub_clk_out3/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'global_clock/clk_in1' to 'system/system_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'global_clock/clk_out4' to pin 'global_clock/bbstub_clk_out4/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'global_clock/clk_in1' to 'system/system_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5819] Moved 6 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 893.449 ; gain = 571.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 904.543 ; gain = 582.902
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin task_2/sqrt:s_axis_cartesian_tuser[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin decode_inferred:in0[0] to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------------------+----------+
+|      |BlackBox name                 |Instances |
++------+------------------------------+----------+
+|1     |dds_compiler_1                |         2|
+|2     |fir_compiler_2                |         2|
+|3     |clk_wiz_0                     |         1|
+|4     |ila_0                         |         1|
+|5     |system_processing_system7_0_0 |         1|
++------+------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------+------+
+|      |Cell                          |Count |
++------+------------------------------+------+
+|1     |clk_wiz_0                     |     1|
+|2     |dds_compiler_1                |     1|
+|3     |dds_compiler_1__2             |     1|
+|4     |fir_compiler_2                |     1|
+|5     |fir_compiler_2__2             |     1|
+|6     |ila_0                         |     1|
+|7     |system_processing_system7_0_0 |     1|
+|8     |CARRY4                        |    67|
+|9     |DSP48E1                       |     2|
+|10    |LUT1                          |   117|
+|11    |LUT2                          |   374|
+|12    |LUT3                          |   183|
+|13    |LUT4                          |   182|
+|14    |LUT5                          |     6|
+|15    |LUT6                          |     2|
+|16    |MULT_AND                      |   202|
+|17    |MUXCY                         |   384|
+|18    |SRL16E                        |   112|
+|19    |XORCY                         |   378|
+|20    |FDCE                          |    33|
+|21    |FDRE                          |  1053|
+|22    |IBUF                          |    13|
+|23    |OBUF                          |     1|
+|24    |OBUFT                         |    15|
++------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 222 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 906.070 ; gain = 398.750
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 906.070 ; gain = 584.430
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1033 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 906.070 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 316 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 114 instances
+  MULT_AND => LUT2: 202 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+132 Infos, 166 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 906.070 ; gain = 587.863
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 906.070 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/fpga/AM_Decoder/AM_Decoder.runs/synth_1/main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 18 17:17:14 2026...

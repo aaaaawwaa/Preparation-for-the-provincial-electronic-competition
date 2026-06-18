@@ -173,7 +173,7 @@ BEGIN
     GENERIC MAP (
       C_XDEVICEFAMILY => "zynq",
       C_MODE_OF_OPERATION => 1,
-      C_MODULUS => 10000,
+      C_MODULUS => 13000,
       C_ACCUMULATOR_WIDTH => 14,
       C_CHANNELS => 1,
       C_HAS_PHASE_OUT => 0,

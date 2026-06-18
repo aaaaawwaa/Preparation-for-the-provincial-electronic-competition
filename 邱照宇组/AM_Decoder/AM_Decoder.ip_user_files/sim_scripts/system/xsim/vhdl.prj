@@ -1,0 +1,13 @@
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_mult_gen_0_0/sim/system_mult_gen_0_0.vhd" \
+"../../../bd/system/ip/system_mult_gen_0_1/sim/system_mult_gen_0_1.vhd" \
+"../../../bd/system/ip/system_dds_compiler_0_0/sim/system_dds_compiler_0_0.vhd" \
+"../../../bd/system/ip/system_dds_compiler_0_2/sim/system_dds_compiler_0_2.vhd" \
+"../../../bd/system/ip/system_fir_compiler_0_0/sim/system_fir_compiler_0_0.vhd" \
+"../../../bd/system/ip/system_fir_compiler_0_2/sim/system_fir_compiler_0_2.vhd" \
+"../../../bd/system/ip/system_mult_gen_2_0/sim/system_mult_gen_2_0.vhd" \
+"../../../bd/system/ip/system_mult_gen_2_1/sim/system_mult_gen_2_1.vhd" \
+"../../../bd/system/ip/system_cordic_0_0/sim/system_cordic_0_0.vhd" \
+"../../../bd/system/ip/system_c_addsub_0_0/sim/system_c_addsub_0_0.vhd" \
+
+nosort

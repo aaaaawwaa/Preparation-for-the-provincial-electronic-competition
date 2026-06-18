@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../AM_Decoder.srcs/sources_1/ip/mult_gen_3/sim/mult_gen_3.vhd" \
+
+nosort
