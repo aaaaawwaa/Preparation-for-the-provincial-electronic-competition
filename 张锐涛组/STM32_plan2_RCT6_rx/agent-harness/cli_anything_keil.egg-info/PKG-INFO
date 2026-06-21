@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: cli-anything-keil
+Version: 1.0.0
+Summary: CLI harness for Keil MDK-ARM (Vision) — build, flash, clean STM32 projects from the command line.
+Author: cli-anything
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)
+Requires-Python: >=3.8
+Requires-Dist: click>=8.0
+Provides-Extra: repl
+Requires-Dist: click-repl>=0.3.0; extra == "repl"

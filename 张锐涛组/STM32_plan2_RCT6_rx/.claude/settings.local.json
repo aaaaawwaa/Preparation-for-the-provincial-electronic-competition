@@ -1,0 +1,65 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__qwen4deepseek__ocr_pdf",
+      "Bash(reg query *)",
+      "Bash(find /c/Keil* -name \"UV4.exe\" -type f)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Bash(where UV4)",
+      "Bash(where uv4 *)",
+      "Bash(\"C:/Keil_v4/UV4/UV4.exe\" -h)",
+      "Bash(\"C:/Keil_v4/UV4/UV4.exe\" --help)",
+      "Bash(\"C:/Keil_v4/UV4/UV4.exe\" -?)",
+      "Bash(pip install *)",
+      "Bash(python -m cli_anything.keil.keil_cli --help)",
+      "Bash(python -m cli_anything.keil.keil_cli where)",
+      "Bash(python -m cli_anything.keil.keil_cli info)",
+      "Bash(python -m cli_anything.keil.keil_cli info --json)",
+      "Bash(python -m cli_anything.keil.keil_cli --json info)",
+      "Bash(python -m cli_anything.keil.keil_cli clean)",
+      "Bash(python -m cli_anything.keil.keil_cli build)",
+      "Bash(python -m cli_anything.keil.keil_cli --json build)",
+      "Bash(python -m cli_anything.keil.keil_cli rebuild)",
+      "mcp__qwen4deepseek__analyze_image",
+      "mcp__qwen4deepseek__read_pdf",
+      "Bash(python agent-harness/cli_anything/keil/keil_cli.py build)",
+      "Bash(python agent-harness/cli_anything/keil/keil_cli.py build --project \"C:\\\\Users\\\\张书清\\\\Desktop\\\\电赛资料\\\\省赛\\\\2021年省赛练习\\\\STM32控制方案\\\\DAC测试\\\\Project\\\\STM32KeilPrj.uvprojx\")",
+      "Bash(python agent-harness/cli_anything/keil/keil_cli.py build --help)",
+      "Bash(python agent-harness/cli_anything/keil/keil_cli.py --help)",
+      "Bash(python agent-harness/cli_anything/keil/keil_cli.py -p \"C:\\\\Users\\\\张书清\\\\Desktop\\\\电赛资料\\\\省赛\\\\2021年省赛练习\\\\STM32控制方案\\\\DAC测试\\\\Project\\\\STM32KeilPrj.uvprojx\" build)",
+      "Bash(python agent-harness/cli_anything/keil/keil_cli.py -p \"Project/STM32KeilPrj.uvprojx\" build)",
+      "Bash(python *、)",
+      "Bash(python *)",
+      "Bash(dir *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(python .claude/check_readme.py mark)",
+      "Bash(python .claude/check_readme.py check)",
+      "Bash(rm -rf C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6)",
+      "Bash(mkdir -p C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6)",
+      "Bash(cp -r 'C:/Users/张书清/Desktop/电赛资料/省赛/2021年省赛练习/STM32控制方案/STM32_plan2_RCT6/*' C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6/)",
+      "Bash(cp -r C:/Users/张书清/Desktop/电赛资料/省赛/2021年省赛练习/STM32控制方案/STM32_plan2_RCT6/.gitignore C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6/)",
+      "Bash(rm -rf C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6/Project/Objects)",
+      "Bash(cat)",
+      "Bash(rm -f C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6/clear.bat)",
+      "Bash(robocopy C:\\\\Users\\\\张书清\\\\Desktop\\\\电赛资料\\\\省赛\\\\2021年省赛练习\\\\STM32控制方案\\\\STM32_plan2_RCT6_tx *)",
+      "Bash(robocopy C:\\\\Users\\\\张书清\\\\Desktop\\\\电赛资料\\\\省赛\\\\2021年省赛练习\\\\STM32控制方案\\\\STM32_plan2_RCT6_rx *)",
+      "Bash(mkdir -p \"C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6_tx\")",
+      "Bash(mkdir -p \"C:/Users/张书清/Desktop/电赛资料/省赛/Preparation-for-the-provincial-electronic-competition/张锐涛组/STM32_plan2_RCT6_rx\")"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": []
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+click>=8.0
+
+[repl]
+click-repl>=0.3.0

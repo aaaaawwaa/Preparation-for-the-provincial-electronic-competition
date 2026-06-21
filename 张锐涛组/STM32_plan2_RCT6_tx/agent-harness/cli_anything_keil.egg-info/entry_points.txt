@@ -1,0 +1,2 @@
+[console_scripts]
+cli-anything-keil = cli_anything.keil.keil_cli:main
